@@ -1,6 +1,7 @@
 local is_vim = vim.fn.has "nvim" ~= 1
 if is_vim then require "catppuccin.lib.vim" end
 
+---@type Catppuccin
 local M = {
 	options = {
 		background = {
@@ -18,6 +19,7 @@ local M = {
 		},
 		no_italic = false,
 		no_bold = false,
+		no_underline = false,
 		styles = {
 			comments = { "italic" },
 			conditionals = { "italic" },
@@ -40,7 +42,10 @@ local M = {
 			markdown = true,
 			nvimtree = true,
 			semantic_tokens = not is_vim,
-			telescope = true,
+			telescope = {
+				enabled = true,
+				style = "classic",
+			},
 			treesitter = not is_vim,
 			ts_rainbow = true,
 			ts_rainbow2 = true,
@@ -68,10 +73,17 @@ local M = {
 					warnings = { "underline" },
 					information = { "underline" },
 				},
+				inlay_hints = {
+					background = true,
+				},
 			},
 			navic = {
 				enabled = false,
 				custom_bg = "NONE",
+			},
+			dropbar = {
+				enabled = true,
+				color_mode = false,
 			},
 		},
 		color_overrides = {},
@@ -125,6 +137,7 @@ function M.load(flavour)
 	f()
 end
 
+---@type fun(user_conf: CatppuccinOptions?)
 function M.setup(user_conf)
 	did_setup = true
 	-- Parsing user config
@@ -181,5 +194,14 @@ vim.api.nvim_create_user_command("CatppuccinCompile", function()
 	vim.notify("Catppuccin (info): compiled cache!", vim.log.levels.INFO)
 	vim.api.nvim_command "colorscheme catppuccin"
 end, {})
+
+if vim.g.catppuccin_debug then
+	vim.api.nvim_create_autocmd("BufWritePost", {
+		pattern = "*/catppuccin/*",
+		callback = function()
+			vim.schedule(function() vim.cmd "CatppuccinCompile" end)
+		end,
+	})
+end
 
 return M
