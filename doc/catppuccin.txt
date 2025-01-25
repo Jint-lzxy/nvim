@@ -38,6 +38,13 @@ lazy.nvim <https://github.com/folke/lazy.nvim>
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
 <
 
+mini.deps
+<https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-deps.md>
+
+>lua
+    add({ source = "catppuccin/nvim", name = "catppuccin" })
+<
+
 packer.nvim <https://github.com/wbthomason/packer.nvim>
 
 >lua
@@ -296,6 +303,10 @@ Use this to set it up:
 
 beacon.nvim>lua
     beacon = false
+<
+
+blink.cmp>lua
+    blink_cmp = false
 <
 
 bufferline.nvimSpecial ~
@@ -641,7 +652,7 @@ mini.nvim>lua
 <
 
 neo-tree.nvim>lua
-    neotree = false
+    neotree = true
 <
 
 neogit>lua
@@ -666,6 +677,10 @@ notifier.nvim>lua
 
 nvim-cmp>lua
     cmp = true
+<
+
+copilot.vim>lua
+    copilot_vim = false,
 <
 
 nvim-dap>lua
@@ -803,6 +818,10 @@ To use another flavour just replace `mocha` with the one you want to use.
 
 render-markdown.nvim>lua
     render_markdown = true
+<
+
+snacks.nvim>lua
+    snacks = false
 <
 
 symbols-outline.nvim
