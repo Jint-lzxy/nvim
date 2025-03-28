@@ -39,6 +39,8 @@ local M = {
 		default_integrations = true,
 		integrations = {
 			alpha = true,
+			blink_cmp = true,
+			fzf = true,
 			cmp = true,
 			dap = true,
 			dap_ui = true,
@@ -106,7 +108,7 @@ local M = {
 			},
 			mini = {
 				enabled = true,
-				indentscope_color = "text",
+				indentscope_color = "overlay2",
 			},
 		},
 		color_overrides = {},

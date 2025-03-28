@@ -105,6 +105,7 @@
 ---@class CtpIntegrations
 ---@field aerial boolean?
 ---@field alpha boolean?
+---@field avante CtpIntegratinAvant | boolean?
 ---@field barbar boolean?
 -- Use this to set it up:
 --
@@ -154,6 +155,7 @@
 ---@field flash boolean?
 ---@field fzf boolean?
 ---@field gitgutter boolean?
+---@field gitgraph boolean?
 ---@field gitsigns boolean?
 ---@field grug_far boolean?
 ---@field harpoon boolean?
@@ -200,7 +202,7 @@
 ---@field render_markdown boolean?
 ---@field sandwich boolean?
 ---@field semantic_tokens boolean?
----@field snacks boolean?
+---@field snacks CtpIntegrationSnacks | boolean?
 ---@field symbols_outline boolean?
 ---@field telekasten boolean?
 ---@field telescope CtpIntegrationTelescope | boolean?
@@ -212,6 +214,11 @@
 ---@field vimwiki boolean?
 ---@field which_key boolean?
 ---@field window_picker boolean?
+
+---@class CtpIntegratinAvant
+--  Whether the opts.windows.sidebar_header.rounded option is set on Avante
+---@field enabled boolean
+---@field windows_sidebar_header_rounded boolean?
 
 ---@class CtpIntegrationBarbecue
 --  Whether to use the alternative background.
@@ -271,6 +278,12 @@
 ---@field enabled boolean
 -- Override the background color for navic.
 ---@field custom_bg CtpColor | "NONE" | "lualine" | nil
+
+---@class CtpIntegrationSnacks
+-- Whether to enable the snacks integration.
+---@field enabled boolean
+-- Sets the color of the indent scope line
+---@field indent_scope_color CtpColor?
 
 ---@class CtpIntegrationTelescope
 -- Whether to enable the telescope integration

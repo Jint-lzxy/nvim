@@ -600,7 +600,7 @@ ctp_feline.setup({
         extras = clrs.overlay1,
         curr_file = clrs.maroon,
         curr_dir = clrs.flamingo,
-        show_modified = false -- show if the file has been modified
+        show_modified = false, -- show if the file has been modified
         show_lazy_updates = false -- show the count of updatable plugins from lazy.nvim
                                   -- need to set checker.enabled = true in lazy.nvim first
                                   -- the icon is set in ui.icons.plugin in lazy.nvim
@@ -728,6 +728,17 @@ fzf = true
 </td>
 </tr>
 <!-- fzf-lua -->
+
+<!-- gitgraph.nvim -->
+</tr>
+<tr>
+<td> <a href="https://github.com/isakbm/gitgraph.nvim">gitgraph.nvim</a> </td>
+<td>
+
+```lua
+gitgraph = false
+```
+<!-- gitgraph.nvim -->
 
 <!-- gitsigns.nvim -->
 </tr>
@@ -1004,20 +1015,6 @@ noice = false
 </td>
 </tr>
 <!-- noice.nvim -->
-
-<!-- NormalNvim -->
-</tr>
-<tr>
-<td> <a href="https://github.com/NormalNvim/NormalNvim">NormalNvim</a> </td>
-<td>
-
-```lua
-NormalNvim = false
-```
-
-</td>
-</tr>
-<!-- NormalNvim -->
 
 <!-- notifier.nvim -->
 </tr>
@@ -1407,9 +1404,11 @@ render_markdown = true
 <td> <a href="https://github.com/folke/snacks.nvim">snacks.nvim</a> </td>
 <td>
 
-
 ```lua
-snacks = false
+snacks = {
+    enabled = false,
+    indent_scope_color = "", -- catppuccin color (eg. `lavender`) Default: text
+}
 ```
 
 </td>
