@@ -121,7 +121,7 @@
 ---```
 ---@field barbecue CtpIntegrationBarbecue | boolean?
 ---@field beacon boolean?
----@field blink_cmp boolean?
+---@field blink_cmp CtpIntegrationsBlinkCmp | boolean?
 ---@field cmp boolean?
 -- `coc.nvim` links to `native_lsp` highlight groups, so you can use
 -- `native_lsp.virtual_text` and `native_lsp.underlines` to style diagnostics.
@@ -156,7 +156,7 @@
 ---@field fzf boolean?
 ---@field gitgutter boolean?
 ---@field gitgraph boolean?
----@field gitsigns boolean?
+---@field gitsigns CtpIntegrationGitsigns | boolean?
 ---@field grug_far boolean?
 ---@field harpoon boolean?
 ---@field headlines boolean?
@@ -178,6 +178,7 @@
 ---@field lsp_saga boolean?
 ---@field lsp_trouble boolean?
 ---@field markdown boolean?
+---@field markview boolean?
 ---@field mason boolean?
 ---@field native_lsp CtpIntegrationNativeLsp | boolean?
 -- You **NEED** to enable highlight in your `nvim-navic` config or it won't work:
@@ -203,6 +204,7 @@
 ---@field sandwich boolean?
 ---@field semantic_tokens boolean?
 ---@field snacks CtpIntegrationSnacks | boolean?
+---@field signify boolean?
 ---@field symbols_outline boolean?
 ---@field telekasten boolean?
 ---@field telescope CtpIntegrationTelescope | boolean?
@@ -230,6 +232,10 @@
 -- Whether the directory name should be dimmed.
 ---@field dim_dirname boolean?
 
+---@class CtpIntegrationsBlinkCmp
+--- The border style for the completion menu
+---@field style 'solid'|'bordered'
+
 ---@class CtpIntegrationColorfulWinsep
 -- Whether to enable the colorful-winsep integration.
 ---@field enabled boolean
@@ -241,6 +247,12 @@
 ---@field enabled boolean
 -- Set to true to apply color to the text in dropbar, false to only apply it to the icons.
 ---@field color_mode boolean?
+
+---@class CtpIntegrationGitsigns
+--- Whether to enable the gitsigns integration
+---@field enabled boolean
+--- Whether to enabled transparent background option
+---@field transparent boolean?
 
 ---@class CtpIntegrationIndentBlankline
 -- Whether to enable the integration.

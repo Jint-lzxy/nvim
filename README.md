@@ -369,7 +369,9 @@ beacon = false
 <td>
 
 ```lua
-blink_cmp = false
+blink_cmp = {
+    style = 'bordered',
+}
 ```
 
 </td>
@@ -749,6 +751,18 @@ gitgraph = false
 ```lua
 gitsigns = true
 ```
+
+<details> <summary>Special</summary>
+
+```lua
+gitsigns = {
+  enabled = true,
+  -- align with the transparent_background option by default
+  transparent = false,
+}
+ ``` 
+
+</details>
 <!-- gitsigns.nvim -->
 
 <!-- grug-far.nvim -->
@@ -928,6 +942,20 @@ markdown = true
 </td>
 </tr>
 <!-- markdown -->
+
+<!-- markview.nvim -->
+</tr>
+<tr>
+<td> <a href="https://github.com/OXY2DEV/markview.nvim">markview.nvim</a> </td>
+<td>
+
+```lua
+markview = false
+```
+
+</td>
+</tr>
+<!-- markview.nvim -->
 
 <!-- mason.nvim -->
 </tr>
@@ -1573,6 +1601,20 @@ sandwich = false
 </td>
 </tr>
 <!-- vim-sandwich -->
+
+<!-- vim-signify -->
+</tr>
+<tr>
+<td> <a href="https://github.com/mhinz/vim-signify">vim-signify</a> </td>
+<td>
+
+```lua
+signify = false
+```
+
+</td>
+</tr>
+<!-- vim-signify -->
 
 <!-- vim-sneak -->
 </tr>
